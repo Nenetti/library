@@ -1,15 +1,24 @@
 #!/bin/sh
 
-echo
-echo "コンパイル開始"
-echo
-
 if [ $# = 2 ]; then
+  echo
+  echo "コンパイル開始"
+  echo
   WS=$(cd $(dirname $0);pwd)
-  dirs=`find ${WS}/ros -maxdepth 10 -type f -name *.java`
+  javas=`find ${WS} -maxdepth 10 -type f -name *.java`
   CLASSPATH=${HOME}/catkin_ws_java/lib
   LIBS=${CLASSPATH}/*
-  javac -classpath ${LIBS}: $dirs
+
+  classes=`find ${WS} -maxdepth 10 -type f -name *.class`
+
+  for class in $classes;
+  do
+    echo "classファイル: ${class}を消去中"
+    rm $class
+  done
+  sleep 1
+  javac -classpath ${LIBS}: $javas
+
   echo
   echo "$2を$1に変換開始"
   echo

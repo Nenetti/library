@@ -2,8 +2,6 @@ package ros;
 
 import org.ros.node.AbstractNodeMain;
 import org.ros.node.ConnectedNode;
-import org.ros.node.Node;
-import org.ros.node.NodeMain;
 
 public abstract class NodeHandle extends AbstractNodeMain{
 
@@ -11,19 +9,14 @@ public abstract class NodeHandle extends AbstractNodeMain{
 
 	public void onStart(ConnectedNode connectedNode) {
 		NodeHandle.connectedNode=connectedNode;
+		start();
 	}
 	
 	public static ConnectedNode connectedNode() {
 		return connectedNode;
 	}
 
-	public void start() {}
-
-	public void onShutdown(Node node) {}
-
-	public void onShutdownComplete(Node node) {}
-
-	public void onError(Node node, Throwable throwable) {}
+	public abstract void start();
 	
 	/******************************************************************************************
 	 * 
