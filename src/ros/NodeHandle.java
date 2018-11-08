@@ -1,15 +1,29 @@
 package ros;
 
+import org.ros.node.AbstractNodeMain;
 import org.ros.node.ConnectedNode;
+import org.ros.node.Node;
+import org.ros.node.NodeMain;
 
-public class NodeHandle {
-	
+public abstract class NodeHandle extends AbstractNodeMain{
+
 	private static ConnectedNode connectedNode;
-	
-	
-	public static void init(ConnectedNode connectedNode) {
+
+	public void onStart(ConnectedNode connectedNode) {
 		NodeHandle.connectedNode=connectedNode;
 	}
+	
+	public static ConnectedNode connectedNode() {
+		return connectedNode;
+	}
+
+	public void start() {}
+
+	public void onShutdown(Node node) {}
+
+	public void onShutdownComplete(Node node) {}
+
+	public void onError(Node node, Throwable throwable) {}
 	
 	/******************************************************************************************
 	 * 
@@ -22,8 +36,5 @@ public class NodeHandle {
 			e.printStackTrace();
 		}
 	}
-	
-	public static ConnectedNode connectedNode() {
-		return connectedNode;
-	}
+
 }
