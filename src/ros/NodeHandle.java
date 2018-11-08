@@ -1,15 +1,13 @@
 package ros;
 
-import org.ros.node.AbstractNodeMain;
 import org.ros.node.ConnectedNode;
 
-public abstract class NodeHandle extends AbstractNodeMain{
+public abstract class NodeHandle {
 
 	private static ConnectedNode connectedNode;
-
-	public void onStart(ConnectedNode connectedNode) {
+	
+	public static void init(ConnectedNode connectedNode) {
 		NodeHandle.connectedNode=connectedNode;
-		start();
 	}
 	
 	public static ConnectedNode connectedNode() {
