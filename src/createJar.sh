@@ -16,7 +16,6 @@ if [ $# = 2 ]; then
     echo "classファイル: ${class}を消去中"
     rm $class
   done
-  sleep 1
   javac -classpath ${LIBS}: $javas
 
   echo
