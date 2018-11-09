@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ $# = 2 ]; then
+if [ $# = 1 ]; then
 
   #####################################################################
   #
@@ -11,6 +11,7 @@ if [ $# = 2 ]; then
   CLASSPATH=${HOME}/catkin_ws_java/lib
   LIBS=${CLASSPATH}/*
   classes=`find ${WS} -maxdepth 10 -type f -name *.class`
+  files=`ls -l ${WS} | grep ^d | awk '{print $9}'`
 
   #####################################################################
   #
@@ -26,9 +27,9 @@ if [ $# = 2 ]; then
   # jar変換
   #
   echo
-  echo "$2を$1に変換開始"
+  echo "$1に変換開始"
   echo
-  jar cvf $1 $2
+  jar cvf $1 $files
   echo
   echo "変換完了"
   echo

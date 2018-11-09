@@ -34,6 +34,14 @@ public class Publisher{
 				break;
 			case TF2:
 				break;
+			case Joy:
+				break;
+			case Odometry:
+				break;
+			case Twist:
+				break;
+			default:
+				break;
 			}
 			publisher.publish(message);
 		} catch (Exception e) {
