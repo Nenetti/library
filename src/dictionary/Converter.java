@@ -18,15 +18,20 @@ public class Converter {
 			String line;
 			while((line=reader.readLine())!=null) {
 				String[] cells=line.split(",");
+				String english;
+				String japanese;
 				switch (cells.length) {
 				case 3:
-					writer_en.write(cells[0]+"\t"+cells[1]);
+					english=cells[0].replaceAll(" ", "_");
+					writer_en.write(english+"\t"+cells[1]);
 					writer_en.newLine();
 					break;
 				case 6:
-					writer_en.write(cells[0]+"\t"+cells[1]);
+					english=cells[0].replaceAll(" ", "_");
+					writer_en.write(english+"\t"+cells[1]);
 					writer_en.newLine();
-					writer_jp.write(cells[3]+"\t"+cells[4]);
+					japanese=cells[3].replaceAll(" ", "_");
+					writer_jp.write(japanese+"\t"+cells[4]);
 					writer_jp.newLine();
 					break;
 				}

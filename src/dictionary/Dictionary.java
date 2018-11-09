@@ -26,13 +26,11 @@ public class Dictionary {
 					switch(cells.length) {
 					case 3:
 						//英語のみ
-						System.out.println(cells.length+" : "+line);
 						english=new Session(cells[0], cells[2]);
 						sessions_en.put(cells[0], new Sessions(english, null));
 						break;
 					case 6:
 						//日本語あり
-						System.out.println(cells.length+" : "+line);
 						english=new Session(cells[0], cells[2]);
 						japanese=new Session(cells[3], cells[5]);
 						Sessions sessions=new Sessions(english, japanese);
@@ -48,12 +46,20 @@ public class Dictionary {
 		}
 	}
 
-	public Sessions getSession(String key, Language language) {
+	public Sessions getSessions(String key, Language language) {
 		switch (language) {
 		case English:
 			return sessions_en.get(key);
 		case Japanese:
 			return sessions_jp.get(key);
+		}
+		return null;
+	}
+	
+	public Session getSession(String key, Language language) {
+		Sessions sessions=getSessions(key, language);
+		if(sessions!=null) {
+			return sessions.getSession(language);
 		}
 		return null;
 	}
