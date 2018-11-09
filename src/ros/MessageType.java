@@ -14,8 +14,10 @@ public class MessageType {
 		Marker("visualization_msgs/Marker"),
 		MarkerArray("visualization_msgs/MarkerArray"),
 		LaserScan("sensor_msgs/LaserScan"),
-		TF2("tf2_msgs/TFMessage");
-		
+		TF2("tf2_msgs/TFMessage"),
+		Odometry("nav_msgs/Odometry"),
+		Joy("sensor_msgs/Joy"),
+		Twist("geometry_msgs/Twist");
 		
 		
 		private String name;
