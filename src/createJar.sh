@@ -8,7 +8,7 @@ if [ $# = 1 ]; then
   #
   WS=$(cd $(dirname $0);pwd)
   javas=`find ${WS} -maxdepth 10 -type f -name *.java`
-  CLASSPATH=${HOME}/catkin_ws_java/lib
+  CLASSPATH=$JAVA_LIB
   LIBS=${CLASSPATH}/*
   classes=`find ${WS} -maxdepth 10 -type f -name *.class`
   files=`ls -l ${WS} | grep ^d | awk '{print $9}'`

@@ -5,8 +5,8 @@ package dictionary;
 
 public class Session {
 	
-	String question;
-	String answer;
+	public String question;
+	public String answer;
 	
 	public Session(String question, String answer) {
 		this.question=question;

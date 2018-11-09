@@ -13,4 +13,14 @@ public class Sessions {
 		this.japanese=japanese;
 	}
 	
+	public Session getSession(Language language) {
+		switch (language) {
+		case English:
+			return english;
+		case Japanese:
+			return japanese;
+		}
+		return null;
+	}
+	
 }
