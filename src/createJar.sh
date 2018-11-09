@@ -29,6 +29,9 @@ if [ $# = 2 ]; then
   echo "$2を$1に変換開始"
   echo
   jar cvf $1 $2
+  echo
+  echo "変換完了"
+  echo
 
   #####################################################################
   #
@@ -42,9 +45,12 @@ if [ $# = 2 ]; then
   #
   for class in $classes;
   do
-    echo "classファイル: ${class}を消去中"
+    #echo "classファイル: ${class}を消去中"
     rm $class
   done
+  echo
+  echo "classファイルを削除"
+  echo
 
 else
   echo
