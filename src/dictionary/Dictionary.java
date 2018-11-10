@@ -1,8 +1,8 @@
 package dictionary;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+
 import java.util.HashMap;
+
+import reader.CSV_Reader;
 
 
 
@@ -15,34 +15,26 @@ public class Dictionary {
 	private HashMap<String, Sessions> sessions_jp = new HashMap<>();
 
 	public Dictionary(String filePath) {
-		try {
-			BufferedReader reader=new BufferedReader(new FileReader(new File(filePath)));
-			String line;
-			while((line=reader.readLine())!=null) {
-				String[] cells=line.split("\t");
-				if(cells!=null) {
-					Session english;
-					Session japanese;
-					switch(cells.length) {
-					case 3:
-						//英語のみ
-						english=new Session(cells[0], cells[2]);
-						sessions_en.put(cells[0], new Sessions(english, null));
-						break;
-					case 6:
-						//日本語あり
-						english=new Session(cells[0], cells[2]);
-						japanese=new Session(cells[3], cells[5]);
-						Sessions sessions=new Sessions(english, japanese);
-						sessions_en.put(cells[0], sessions);
-						sessions_jp.put(cells[3], sessions);
-						break;
-					}
-				}
+		String[][] cells=CSV_Reader.read(filePath);
+		if(cells==null) {return;}
+		for(String[] rows: cells) {
+			Session english;
+			Session japanese;
+			switch(rows.length) {
+			case 3:
+				//英語のみ
+				english=new Session(rows[0], rows[2]);
+				sessions_en.put(rows[0], new Sessions(english, null));
+				break;
+			case 6:
+				//日本語あり
+				english=new Session(rows[0], rows[2]);
+				japanese=new Session(rows[3], rows[5]);
+				Sessions sessions=new Sessions(english, japanese);
+				sessions_en.put(rows[0], sessions);
+				sessions_jp.put(rows[3], sessions);
+				break;
 			}
-			reader.close();
-		} catch (Exception e) {
-			e.printStackTrace();
 		}
 	}
 
