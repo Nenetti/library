@@ -19,6 +19,7 @@ public class UserProperty {
 	private static HashMap<String, String> toMap(String[][] cells) {
 		HashMap<String, String> map=new HashMap<>();
 		for(String[] rows: cells) {
+			if(rows[0].contains(".home")) {rows[1]=System.getProperty("user.dir")+rows[1];}
 			map.put(rows[0], rows[1]);
 		}
 		return map;
