@@ -50,6 +50,7 @@ public class Dictionary {
 	
 	public Session getSession(String key, Language language) {
 		Sessions sessions=getSessions(key, language);
+		System.out.println(sessions);
 		if(sessions!=null) {
 			return sessions.getSession(language);
 		}
