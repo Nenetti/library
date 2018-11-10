@@ -19,7 +19,7 @@ public class Dictionary {
 			BufferedReader reader=new BufferedReader(new FileReader(new File(filePath)));
 			String line;
 			while((line=reader.readLine())!=null) {
-				String[] cells=line.split(",");
+				String[] cells=line.split("\t");
 				if(cells!=null) {
 					Session english;
 					Session japanese;
