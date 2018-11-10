@@ -58,7 +58,7 @@ else
   echo "引数の数が一致しません"
   echo "引数は2つ必要です"
   echo "ex:"
-  echo "   $0 <作成ファイル名.jar> <jar化対象フォルダ>"
+  echo "   $0 <作成ファイル名.jar>"
   echo
 fi
 
