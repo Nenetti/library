@@ -22,7 +22,7 @@ public class ServiceClient {
 		constructor(topic, publish_type, subscribe_type);
 	}
 	
-	public void constructor(String topic, String publish_type, String subscribe_type) {
+	private void constructor(String topic, String publish_type, String subscribe_type) {
 		String server_topic=topic+"_"+"server";
 		String client_topic=topic+"_"+"client";
 		this.type=Type.getType(subscribe_type);

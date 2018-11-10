@@ -12,6 +12,7 @@ public class Subscriber{
 	public Subscriber(String topic, String type) {
 		this.type=Type.getType(type);
 		this.subscriber=NodeHandle.connectedNode().newSubscriber(topic, type);
+		NodeHandle.registerSubscriber(this, topic);
 	}
 	
 	public void addMessageListener(MessageListener<Object> listener) {

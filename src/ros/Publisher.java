@@ -12,6 +12,7 @@ public class Publisher{
 	public Publisher(String topic, String type) {
 		this.type=Type.getType(type);
 		publisher=NodeHandle.connectedNode().newPublisher(topic, type);
+		NodeHandle.registerPublisher(this, topic);
 	}
 	
 	@SuppressWarnings("unchecked")
