@@ -22,29 +22,26 @@ public class Publisher{
 			switch (type) {
 			case String:
 				((std_msgs.String)message).setData((String)data);
+				publisher.publish(message);
 				break;
 			case Int32:
 				((std_msgs.Int32)message).setData((int)data);
-				break;
-			case LaserScan:
-				break;
-			case Marker:
+				publisher.publish(message);
 				break;
 			case MarkerArray:
 				((visualization_msgs.MarkerArray)message).setMarkers((List<visualization_msgs.Marker>)data);
+				publisher.publish(message);
 				break;
+			case Marker:
 			case TF2:
-				break;
 			case Joy:
-				break;
 			case Odometry:
-				break;
 			case Twist:
-				break;
+			case LaserScan:
+				publisher.publish(data);
 			default:
 				break;
 			}
-			publisher.publish(message);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
