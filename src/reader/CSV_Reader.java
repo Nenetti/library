@@ -7,8 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CSV_Reader {
-	
-	
+
 	public static String[][] read(String path) {
 		try {
 			BufferedReader reader=new BufferedReader(new FileReader(new File(path)));
