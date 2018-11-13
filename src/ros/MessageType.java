@@ -17,6 +17,8 @@ public class MessageType {
 		TF2("tf2_msgs/TFMessage"),
 		Odometry("nav_msgs/Odometry"),
 		Joy("sensor_msgs/Joy"),
+		MoveBaseGoal("move_base_msgs/MoveBaseGoal"),
+		MoveBaseActionGoal("move_base_msgs/MoveBaseActionGoal"),
 		Twist("geometry_msgs/Twist");
 		
 		

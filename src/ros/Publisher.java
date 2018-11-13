@@ -32,14 +32,14 @@ public class Publisher{
 				((visualization_msgs.MarkerArray)message).setMarkers((List<visualization_msgs.Marker>)data);
 				publisher.publish(message);
 				break;
-			case Marker:
-			case TF2:
-			case Joy:
-			case Odometry:
-			case Twist:
-			case LaserScan:
-				publisher.publish(data);
+			//case Marker:
+			//case TF2:
+			//case Joy:
+			//case Odometry:
+			//case Twist:
+			//case LaserScan:
 			default:
+				publisher.publish(data);
 				break;
 			}
 		} catch (Exception e) {

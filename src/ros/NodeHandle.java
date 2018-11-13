@@ -2,8 +2,10 @@ package ros;
 
 import java.util.HashMap;
 
+import org.ros.message.Time;
 import org.ros.node.AbstractNodeMain;
 import org.ros.node.ConnectedNode;
+import std_msgs.Header;
 
 public abstract class NodeHandle extends AbstractNodeMain{
 
@@ -71,6 +73,10 @@ public abstract class NodeHandle extends AbstractNodeMain{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	public static Time getTimeStamp(){
+		return  connectedNode.getCurrentTime();
 	}
 
 }
