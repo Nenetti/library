@@ -1,10 +1,10 @@
 package ros;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import ros.Publisher;
 import visualization_msgs.MarkerArray;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Rviz {

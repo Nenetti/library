@@ -1,8 +1,8 @@
 package ros;
 
-import java.util.List;
-
 import ros.MessageType.Type;
+
+import java.util.List;
 
 public class Publisher{
 	

@@ -1,8 +1,7 @@
 package ros;
 
-import org.ros.message.Time;
-
 import javafx.scene.paint.Color;
+import org.ros.message.Time;
 import ros.Rviz.Action;
 import ros.Rviz.Type;
 

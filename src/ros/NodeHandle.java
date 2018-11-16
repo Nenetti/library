@@ -1,11 +1,10 @@
 package ros;
 
-import java.util.HashMap;
-
 import org.ros.message.Time;
 import org.ros.node.AbstractNodeMain;
 import org.ros.node.ConnectedNode;
-import std_msgs.Header;
+
+import java.util.HashMap;
 
 public abstract class NodeHandle extends AbstractNodeMain{
 

@@ -1,7 +1,6 @@
 package ros;
 
 import org.ros.message.MessageListener;
-
 import ros.MessageType.Type;
 
 

@@ -1,9 +1,9 @@
 package ros;
 
 
-import java.util.HashMap;
-
 import reader.CSV_Reader;
+
+import java.util.HashMap;
 
 public class UserProperty {
 	
